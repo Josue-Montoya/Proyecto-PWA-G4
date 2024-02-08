@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DirectoresModel>
+@{
+    ViewData["Title"] = "Listado de Directores";
+}
+
+<h1>Listado de Directores</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="mt-3 mb-3">
+                <a asp-action="Create" asp-controller="Directores" class="btn btn-success">
+                    Nuevo Director
+                </a>
+            </div>
+
+            <table class="table table-bordered table-striped table-responsive" id="directoresTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Nacionalidad</th>
+                        <th>Premios</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var directores in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(item => directores.Id)</td>
+                            <td>@Html.DisplayFor(item => directores.Nombre)</td>
+                            <td>@Html.DisplayFor(item => directores.Apellido)</td>
+                            <td>@Html.DisplayFor(item => directores.Nacionalidad)</td>
+                            <td>@Html.DisplayFor(item => directores.Premios)</td>
+                            <td>
+                                <a asp-controller="Directores"
+                                   asp-action="Edit"
+                                   asp-route-id="@directores.Id"
+                                   class="btn btn-primary">
+                                    Editar
+                                </a>
+                                <a asp-controller="Directores"
+                                   asp-action="Delete"
+                                   asp-route-id="@directores.Id"
+                                   class="btn btn-danger">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!--Inicializar-->
+    <script>
+        $(document).ready(function () {
+            $("#directoresTable").DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'csv', 'pdf', 'excel'
+                ],
+                columnDefs: [
+                    {
+                        target: 5,
+                        orderable: false,
+                        searchable: false
+                    }
+                ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json'
+                }
+            });
+        })
+    </script>
+}

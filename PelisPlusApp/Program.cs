@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IValidator<PeliculasModel>, PeliculasValidaciones>();
+builder.Services.AddScoped<IValidator<DirectoresModel>, DirectoresValidator>();
 
 ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("es");
 
