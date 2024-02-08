@@ -7,7 +7,7 @@ namespace PelisPlusApp.Data
 {
     public class PeliculasData
     {
-        string connectionString = "Data Source=DESKTOP-FUJM22V\\U20210157;Initial Catalog=PelisPlus;Integrated Security=True;Encrypt=False";
+        string connectionString = "Data Source=U20210476;Initial Catalog=PelisPlus;Integrated Security=True;Encrypt=False";
 
         public IEnumerable<PeliculasModel> GetAll()
         {
