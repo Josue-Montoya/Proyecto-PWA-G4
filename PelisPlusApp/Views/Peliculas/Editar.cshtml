@@ -1,0 +1,44 @@
+﻿@model PeliculasModel
+@{
+    ViewData["Title"] = "Editar Pelicula";
+}
+
+<h1>Editar Pelicula</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Editar">
+
+                @Html.AntiForgeryToken()
+                <div class="mb-3">
+                    <input asp-for="Id_pelicula" type="hidden" class="form-control">
+                    <label asp-for="Titulo" class="form-label">Titulo</label>
+                    <input asp-for="Titulo" type="text" class="form-control">
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Categoria" class="form-label">Categoria</label>
+                    <input asp-for="Categoria" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Sinopsis" class="form-label">Sinopsis</label>
+                    <input asp-for="Sinopsis" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Duracion" class="form-label">Duracion</label>
+                    <input asp-for="Duracion" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Director" class="form-label">Director</label>
+                    <input asp-for="Director" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Fecha_estreno" class="form-label">Fecha de estreno</label>
+                    <input asp-for="Fecha_estreno" type="text" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
