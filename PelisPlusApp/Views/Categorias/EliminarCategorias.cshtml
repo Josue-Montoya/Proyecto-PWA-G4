@@ -1,0 +1,49 @@
+﻿@model CategoriasModel
+@{
+    ViewData["title"] = "Eliminar Categoria";
+}
+
+<h1>Eliminar Empleado</h1>
+
+<h3>Está seguro que desea eliminar?</h3>
+
+<div class="container">
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id_categoria)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.Id_categoria)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre_categoria)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre_categoria)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion_categoria)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion_categoria)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Restriccion_edad_categoria)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Restriccion_edad_categoria)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nota_categoria)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.Nota_categoria)
+        </dt>
+    </dl>
+
+    <form asp-action="EliminarCategorias">
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <input asp-for="Id_categoria" type="hidden" class="form-control">
+        <a asp-action="Index" class="btn btn-primary">Regresar al listado</a>
+    </form>
+</div>

@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IValidator<PeliculasModel>, PeliculasValidaciones>();
 builder.Services.AddScoped<IValidator<DirectoresModel>, DirectoresValidator>();
+builder.Services.AddScoped<IValidator<CategoriasModel>, CategoriaValidations>();
 
 ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("es");
 

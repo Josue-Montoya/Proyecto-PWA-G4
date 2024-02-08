@@ -1,0 +1,34 @@
+﻿@model CategoriasModel
+@{
+    ViewData["title"] = "Editar Categoria";
+}
+
+<h1>Editar Categoria</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="EditarCategoria">
+                @Html.AntiForgeryToken()
+                <div class="mb-3">
+                    <input asp-for="Id_categoria" type="hidden" class="form-control">
+                    <label asp-for="Nombre_categoria" class="form-label">Nombre Categoria</label>
+                    <input asp-for="Nombre_categoria" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Descripcion_categoria" class="form-label">Descripcion Categoria</label>
+                    <input asp-for="Descripcion_categoria" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Restriccion_edad_categoria" class="form-label">Restirccion de Edad</label>
+                    <input asp-for="Restriccion_edad_categoria" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Nota_categoria" class="form-label">Nota</label>
+                    <input asp-for="Nota_categoria" type="text" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>
